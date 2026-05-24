@@ -12,6 +12,45 @@ A complete, production-ready, and premium Real-World E-Commerce application with
 - **Responsive & Premium UI**: Built with Next.js App Router, Tailwind CSS, and Shadcn UI components.
 - **SEO Optimized**: Dynamic metadata generation and Server Components for optimal performance.
 
+---
+
+## 🎨 Preview & UI Showcase
+
+### 🏠 Home Page
+A premium responsive interface featuring standard Light and sleek Dark mode options:
+
+<table>
+  <tr>
+    <td align="center"><b>Light Mode</b></td>
+    <td align="center"><b>Dark Mode</b></td>
+  </tr>
+  <tr>
+    <td><img src="./images/home-light-mode.png" alt="Home Light Mode" width="100%" /></td>
+    <td><img src="./images/home-dark-mode.png" alt="Home Dark Mode" width="100%" /></td>
+  </tr>
+</table>
+
+### 🛍️ Products Page
+Advanced searching, pagination, sorting, and filtration mechanisms.
+
+<img src="./images/products-page.png" alt="Products Page" width="100%" />
+
+### 📊 Admin Dashboard
+Comprehensive statistics and full catalog management control panel.
+
+<table>
+  <tr>
+    <td align="center"><b>Overview Analytics</b></td>
+    <td align="center"><b>Products Management (CRUD)</b></td>
+  </tr>
+  <tr>
+    <td><img src="./images/Admin-Dashboard(overview).png" alt="Admin Dashboard Overview" width="100%" /></td>
+    <td><img src="./images/Admin-Dashboard(Products%20Management).png" alt="Admin Dashboard Products" width="100%" /></td>
+  </tr>
+</table>
+
+---
+
 ## 🛠️ Tech Stack
 
 ### Backend
@@ -39,17 +78,21 @@ A complete, production-ready, and premium Real-World E-Commerce application with
 ## ⚙️ Installation & Setup
 
 ### 1. Clone the repository
+
 ```bash
 git clone <repository-url>
 cd ShopVerse-V2
 ```
 
 ### 2. Backend Setup
+
 ```bash
 cd backend
 npm install
 ```
+
 Create a `.env` file in the `backend` directory based on `.env.example`:
+
 ```env
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
@@ -60,26 +103,34 @@ CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 FRONTEND_URL=http://localhost:3000
 ```
+
 Start the backend server:
+
 ```bash
 npm run dev
 ```
 
 Seed catalog data and default admin (`admin@shopverse.com` / `admin123` unless overridden in `.env`):
+
 ```bash
 npm run seed
 ```
 
 ### 3. Frontend Setup
+
 ```bash
 cd frontend
 npm install
 ```
+
 Create a `.env.local` file in the `frontend` directory:
+
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
+
 Start the frontend development server:
+
 ```bash
 npm run dev
 ```
@@ -99,6 +150,7 @@ Import `ShopVerse-V2.postman_collection.json` into Postman or Thunder Client.
 ## 📖 API Documentation
 
 ### Authentication (`/api/auth`)
+
 | Method | Endpoint | Access | Description |
 |--------|----------|--------|-------------|
 | POST | `/register` | Public | Register a new user |
@@ -108,11 +160,13 @@ Import `ShopVerse-V2.postman_collection.json` into Postman or Thunder Client.
 | GET | `/profile` | Private | Get logged-in user profile |
 
 ### Users (`/api/users`)
+
 | Method | Endpoint | Access | Description |
 |--------|----------|--------|-------------|
 | GET | `/` | Admin | List all users (no passwords) |
 
 ### Products (`/api/products`)
+
 | Method | Endpoint | Access | Description |
 |--------|----------|--------|-------------|
 | GET | `/` | Public | Get all products (with filters, sort, pagination) |
@@ -121,10 +175,14 @@ Import `ShopVerse-V2.postman_collection.json` into Postman or Thunder Client.
 | PUT | `/:id` | Admin | Update a product |
 | DELETE | `/:id` | Admin | Delete a product |
 
-#### Product Filters Example:
-`/api/products?category=electronics&price[gte]=100&price[lte]=1000&search=laptop&sort=-price&page=1&limit=12`
+#### Product Filters Example
+
+```bash
+/api/products?category=electronics&price[gte]=100&price[lte]=1000&search=laptop&sort=-price&page=1&limit=12
+```
 
 ### Categories (`/api/categories`)
+
 | Method | Endpoint | Access | Description |
 |--------|----------|--------|-------------|
 | GET | `/` | Public | Get all categories |
@@ -133,6 +191,7 @@ Import `ShopVerse-V2.postman_collection.json` into Postman or Thunder Client.
 | DELETE | `/:id` | Admin | Delete a category |
 
 ### Orders (`/api/orders`)
+
 | Method | Endpoint | Access | Description |
 |--------|----------|--------|-------------|
 | POST | `/` | Private | Create a new order |
@@ -141,4 +200,5 @@ Import `ShopVerse-V2.postman_collection.json` into Postman or Thunder Client.
 | PATCH | `/:id/status` | Admin | Update order status |
 
 ## 🛡️ License
+
 This project is licensed under the MIT License.
